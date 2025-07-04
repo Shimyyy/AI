@@ -1,0 +1,470 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Task Force</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f2f5f9;
+            color: #333;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            padding: 1rem 2rem;
+        }
+        .search-box {
+            text-align: center;
+            margin: 20px 0;
+        }
+        input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        .topic {
+            background: #e3f2fd;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .use-case {
+            background: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-left: 5px solid #3498db;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .use-case h3 {
+            margin: 0;
+            color: #1abc9c;
+            cursor: pointer;
+        }
+        .use-case-content {
+            display: none;
+            padding-top: 10px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .scroll-indicator {
+            height: 5px;
+            background: #3498db;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            z-index: 1000;
+        }
+        .dark-mode {
+            background: #1e1e2f;
+            color: #e0e0e0;
+        }
+        .dark-mode .use-case {
+            background: #2c2c3d;
+            border-left-color: #9b59b6;
+        }
+        .dark-mode .topic {
+            background: #2e3b4e;
+        }
+        .toggle-mode {
+            position: fixed;
+            top: 10px;
+            right: 15px;
+            background: #34495e;
+            color: white;
+            padding: 8px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1100;
+        }
+        @media (max-width: 768px) {
+            input[type="text"] {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="scroll-indicator" id="scrollBar"></div>
+<div class="toggle-mode" onclick="toggleDarkMode()">
+    <i class="fas fa-moon"></i> Toggle Dark Mode
+</div>
+<header>
+    <h1><i class="fas fa-robot"></i> AI Task Force</h1>
+</header>
+<div class="container">
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search use cases, tools, or owners...">
+    </div>
+<div class="topic"><h2><i class="fas fa-lightbulb"></i> MIM and Problem Management </h2>
+        <div class="use-case" data-keywords="AI Co-Pilot for Bridge Calls During major incidents, Incident Managers are required to manage the bridge, communicate with stakeholders, and take notes at the same time. This leads to missed updates, unclear action items, and poor post-call documentation.  The AI Co-Pilot joins the bridge call as a virtual assistant. It listens to the conversation, transcribes everything in real-time, identifies speakers, capture all investigation chronology, highlights key decisions, captures action items with timestamps and owners, and finally sends a structured summary to Major Incident manager to cross check and re verify after the call ends.  Reduces manual effort, improves the quality of documentation, ensures no critical point is missed, and accelerates RCA and learning post-incident.  N/A Saugat Shaw">
+            <h3 onclick="toggleContent(this)"><i class="fas fa-cogs"></i> AI Co-Pilot for Bridge Calls</h3>
+            <div class="use-case-content">
+                <p><strong>Description:</strong></p><p>During major incidents, Incident Managers are required to manage the bridge, communicate with stakeholders, and take notes at the same time. This leads to missed updates, unclear action items, and poor post-call documentation. </p>
+                <p><strong>AI Solution:</strong></p><p>The AI Co-Pilot joins the bridge call as a virtual assistant. It listens to the conversation, transcribes everything in real-time, identifies speakers, capture all investigation chronology, highlights key decisions, captures action items with timestamps and owners, and finally sends a structured summary to Major Incident manager to cross check and re verify after the call ends. </p>
+                <p><strong>Benefits:</strong></p><p>Reduces manual effort, improves the quality of documentation, ensures no critical point is missed, and accelerates RCA and learning post-incident. </p>
+                <p><strong>Preferred Tools:</strong> N/A</p>
+                <p><strong>Owner:</strong> Saugat Shaw</p>
+            </div>
+        </div>
+        
+        <div class="use-case" data-keywords="Auto-Stakeholder Tagging & Bridge Creation When a major incident is declared, the on-call engineer often struggle  identifying and inviting the right stakeholders. Incorrect or delayed tagging causes confusion and resolution delays.  The AI system reads the incident details (from monitoring or ITSM tools), matches it against historical stakeholder mappings, and automatically creates a bridge (Teams/Zoom), names it properly, and after confirmation from MIM it will send the invite Reduces bridge setup time, ensures accurate stakeholder involvement, and cuts down Mean Time to Resolution (MTTR) N/A Saugat Shaw">
+            <h3 onclick="toggleContent(this)"><i class="fas fa-cogs"></i> Auto-Stakeholder Tagging & Bridge Creation</h3>
+            <div class="use-case-content">
+                <p><strong>Description:</strong></p><p>When a major incident is declared, the on-call engineer often struggle  identifying and inviting the right stakeholders. Incorrect or delayed tagging causes confusion and resolution delays. </p>
+                <p><strong>AI Solution:</strong></p><p>The AI system reads the incident details (from monitoring or ITSM tools), matches it against historical stakeholder mappings, and automatically creates a bridge (Teams/Zoom), names it properly, and after confirmation from MIM it will send the invite</p>
+                <p><strong>Benefits:</strong></p><p>Reduces bridge setup time, ensures accurate stakeholder involvement, and cuts down Mean Time to Resolution (MTTR)</p>
+                <p><strong>Preferred Tools:</strong> N/A</p>
+                <p><strong>Owner:</strong> Saugat Shaw</p>
+            </div>
+        </div>
+        
+        <div class="use-case" data-keywords="Auto-Comms Bot for Stakeholder Updates During high-severity incidents, the Incident Manager has to send regular updates to stakeholders. This is time-consuming, stressful, and error-prone.  An AI-powered bot listens to bridge conversations, monitors action item progress, and generates real-time summaries or 30-minutely updates. These are formatted and ready to send via email, Slack, or MS Teams.  Improves communication accuracy, keeps stakeholders in sync without adding burden on the IM, and builds trust in incident handling processes.  N/A Saugat Shaw">
+            <h3 onclick="toggleContent(this)"><i class="fas fa-cogs"></i> Auto-Comms Bot for Stakeholder Updates</h3>
+            <div class="use-case-content">
+                <p><strong>Description:</strong></p><p>During high-severity incidents, the Incident Manager has to send regular updates to stakeholders. This is time-consuming, stressful, and error-prone. </p>
+                <p><strong>AI Solution:</strong></p><p>An AI-powered bot listens to bridge conversations, monitors action item progress, and generates real-time summaries or 30-minutely updates. These are formatted and ready to send via email, Slack, or MS Teams. </p>
+                <p><strong>Benefits:</strong></p><p>Improves communication accuracy, keeps stakeholders in sync without adding burden on the IM, and builds trust in incident handling processes. </p>
+                <p><strong>Preferred Tools:</strong> N/A</p>
+                <p><strong>Owner:</strong> Saugat Shaw</p>
+            </div>
+        </div>
+        
+        <div class="use-case" data-keywords="RCA Suggestion Post-Incident Root Cause Analysis is often repetitive and delayed because it requires manual correlation of incident data, logs, and history.  After incident resolution, the AI system analyzes related data, compares it with past incidents, and automatically suggests probable root causes, corrective actions, and related KB articles or Known Error Records (KERs). Speeds up RCA, improves accuracy, and reduces repeated effort by leveraging historical learning.  N/A Saugat Shaw">
+            <h3 onclick="toggleContent(this)"><i class="fas fa-cogs"></i> RCA Suggestion Post-Incident</h3>
+            <div class="use-case-content">
+                <p><strong>Description:</strong></p><p>Root Cause Analysis is often repetitive and delayed because it requires manual correlation of incident data, logs, and history. </p>
+                <p><strong>AI Solution:</strong></p><p>After incident resolution, the AI system analyzes related data, compares it with past incidents, and automatically suggests probable root causes, corrective actions, and related KB articles or Known Error Records (KERs).</p>
+                <p><strong>Benefits:</strong></p><p>Speeds up RCA, improves accuracy, and reduces repeated effort by leveraging historical learning. </p>
+                <p><strong>Preferred Tools:</strong> N/A</p>
+                <p><strong>Owner:</strong> Saugat Shaw</p>
+            </div>
+        </div>
+        
+        <div class="use-case" data-keywords="Auto-Proactive Problem Creation (Problem Management)  Repeated low-severity incidents often go unnoticed as related, causing delays in identifying underlying problems. The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers.  Prevents future major incidents by catching root causes early, reducing ticket noise and service disruption.  N/A Saugat Shaw">
+            <h3 onclick="toggleContent(this)"><i class="fas fa-cogs"></i> Auto-Proactive Problem Creation (Problem Management) </h3>
+            <div class="use-case-content">
+                <p><strong>Description:</strong></p><p>Repeated low-severity incidents often go unnoticed as related, causing delays in identifying underlying problems.</p>
+                <p><strong>AI Solution:</strong></p><p>The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers. </p>
+                <p><strong>Benefits:</strong></p><p>Prevents future major incidents by catching root causes early, reducing ticket noise and service disruption. </p>
+                <p><strong>Preferred Tools:</strong> N/A</p>
+                <p><strong>Owner:</strong> Saugat Shaw</p>
+            </div>
+        </div>
+        </div><div class="topic"><h2><i class="fas fa-lightbulb"></i> Communication & Accessibility </h2>
+        <div class="use-case" data-keywords="Real-Time Content Translation in Assyst for Multilingual Support Integrate AI translation capabilities within Assyst to automatically translate ticket content, comments, and knowledge base (KB) articles. When users or support agents log or view a ticket in a different language, the AI detects the language and provides an inline translated version in the user's or agent's preferred language.  The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers.  Enables seamless communication between support agents and end users across different geographies. 
+
+Reduces delays caused by manual translation or misunderstandings. 
+
+Promotes consistent and high-quality service by making solutions accessible to all users, regardless of the language. Azure Cognitive Services (Translator) – Native Microsoft for integration, real-time translation, and supports over 100 languages. 
+
+Google Cloud Translation API – High accuracy, widely supported enterprise systems. 
+
+Amazon Translate – Real-time, scalable neural machine translation, integrates easily into backend workflows.  Abishek Fernando">
+            <h3 onclick="toggleContent(this)"><i class="fas fa-cogs"></i> Real-Time Content Translation in Assyst for Multilingual Support</h3>
+            <div class="use-case-content">
+                <p><strong>Description:</strong></p><p>Integrate AI translation capabilities within Assyst to automatically translate ticket content, comments, and knowledge base (KB) articles. When users or support agents log or view a ticket in a different language, the AI detects the language and provides an inline translated version in the user's or agent's preferred language. </p>
+                <p><strong>AI Solution:</strong></p><p>The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers. </p>
+                <p><strong>Benefits:</strong></p><p>Enables seamless communication between support agents and end users across different geographies. 
+
+Reduces delays caused by manual translation or misunderstandings. 
+
+Promotes consistent and high-quality service by making solutions accessible to all users, regardless of the language.</p>
+                <p><strong>Preferred Tools:</strong> Azure Cognitive Services (Translator) – Native Microsoft for integration, real-time translation, and supports over 100 languages. 
+
+Google Cloud Translation API – High accuracy, widely supported enterprise systems. 
+
+Amazon Translate – Real-time, scalable neural machine translation, integrates easily into backend workflows. </p>
+                <p><strong>Owner:</strong> Abishek Fernando</p>
+            </div>
+        </div>
+        </div><div class="topic"><h2><i class="fas fa-lightbulb"></i> Resolution via AI + Knowledge Base </h2>
+        <div class="use-case" data-keywords="Auto-Suggest Knowledge Base Articles During Ticket Logging As users begin to log an issue in Assyst, AI analyzes the ticket subject and description in real time to recommend relevant KB articles. Suggestions appear before submission, prompting users to attempt self-resolution.  The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers.  Reduces repetitive ticket submissions, empowers end-users with self-service, and improves first-contact resolution rates. M365 Copilot Abishek Fernando">
+            <h3 onclick="toggleContent(this)"><i class="fas fa-cogs"></i> Auto-Suggest Knowledge Base Articles During Ticket Logging</h3>
+            <div class="use-case-content">
+                <p><strong>Description:</strong></p><p>As users begin to log an issue in Assyst, AI analyzes the ticket subject and description in real time to recommend relevant KB articles. Suggestions appear before submission, prompting users to attempt self-resolution. </p>
+                <p><strong>AI Solution:</strong></p><p>The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers. </p>
+                <p><strong>Benefits:</strong></p><p>Reduces repetitive ticket submissions, empowers end-users with self-service, and improves first-contact resolution rates.</p>
+                <p><strong>Preferred Tools:</strong> M365 Copilot</p>
+                <p><strong>Owner:</strong> Abishek Fernando</p>
+            </div>
+        </div>
+        
+        <div class="use-case" data-keywords="AI-Generated Walkthrough Videos for Known Issues AI scans historical tickets and generates short, step-by-step video tutorials for common problems (e.g., how to configure VPN, clear cache). Videos are embedded in KB articles or shared directly via Teams or email. The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers.  Reduces dependency on IT agents, increases engagement and comprehension, and supports faster issue resolution.  ChatGPT + Microsoft Stream Abishek Fernando">
+            <h3 onclick="toggleContent(this)"><i class="fas fa-cogs"></i> AI-Generated Walkthrough Videos for Known Issues</h3>
+            <div class="use-case-content">
+                <p><strong>Description:</strong></p><p>AI scans historical tickets and generates short, step-by-step video tutorials for common problems (e.g., how to configure VPN, clear cache). Videos are embedded in KB articles or shared directly via Teams or email.</p>
+                <p><strong>AI Solution:</strong></p><p>The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers. </p>
+                <p><strong>Benefits:</strong></p><p>Reduces dependency on IT agents, increases engagement and comprehension, and supports faster issue resolution. </p>
+                <p><strong>Preferred Tools:</strong> ChatGPT + Microsoft Stream</p>
+                <p><strong>Owner:</strong> Abishek Fernando</p>
+            </div>
+        </div>
+        
+        <div class="use-case" data-keywords="AI Chatbot for Visual Resolutions via Teams After a ticket is raised, users describe their issue in Teams. The AI chatbot parses the description, compares it against past tickets and KB entries using ML, and delivers a visual solution using adaptive cards, charts, or annotated steps powered by Power BI.  The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers.  Enables rapid support without needing agent intervention, and improves user satisfaction with interactive, visual guidance. Teams Premium + Power BI Abishek Fernando">
+            <h3 onclick="toggleContent(this)"><i class="fas fa-cogs"></i> AI Chatbot for Visual Resolutions via Teams</h3>
+            <div class="use-case-content">
+                <p><strong>Description:</strong></p><p>After a ticket is raised, users describe their issue in Teams. The AI chatbot parses the description, compares it against past tickets and KB entries using ML, and delivers a visual solution using adaptive cards, charts, or annotated steps powered by Power BI. </p>
+                <p><strong>AI Solution:</strong></p><p>The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers. </p>
+                <p><strong>Benefits:</strong></p><p>Enables rapid support without needing agent intervention, and improves user satisfaction with interactive, visual guidance.</p>
+                <p><strong>Preferred Tools:</strong> Teams Premium + Power BI</p>
+                <p><strong>Owner:</strong> Abishek Fernando</p>
+            </div>
+        </div>
+        
+        <div class="use-case" data-keywords="Voice-Guided Troubleshooting via AI Assistant AI assistant narrates resolution steps to users in Teams or via mobile for hands-free troubleshooting. Users can hear the steps spoken aloud and optionally follow along with visual prompts. The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers.  Enhances accessibility, supports multitasking, and caters to auditory learners, reducing resolution time Power Virtual Agents + Azure Speech Services Abishek Fernando">
+            <h3 onclick="toggleContent(this)"><i class="fas fa-cogs"></i> Voice-Guided Troubleshooting via AI Assistant</h3>
+            <div class="use-case-content">
+                <p><strong>Description:</strong></p><p>AI assistant narrates resolution steps to users in Teams or via mobile for hands-free troubleshooting. Users can hear the steps spoken aloud and optionally follow along with visual prompts.</p>
+                <p><strong>AI Solution:</strong></p><p>The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers. </p>
+                <p><strong>Benefits:</strong></p><p>Enhances accessibility, supports multitasking, and caters to auditory learners, reducing resolution time</p>
+                <p><strong>Preferred Tools:</strong> Power Virtual Agents + Azure Speech Services</p>
+                <p><strong>Owner:</strong> Abishek Fernando</p>
+            </div>
+        </div>
+        
+        <div class="use-case" data-keywords="Automated Email Resolutions for Known Issues Upon ticket creation, AI cross-checks the issue against a catalog of known problems. If a match is found, RPA sends a pre-approved solution to the user via email. The process waits for user confirmation before closing the ticket. The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers.  Speeds up resolution of frequent issues like cache clearing or password resets and eliminates the need for manual follow-up.  RPA + Power Automate Abishek Fernando">
+            <h3 onclick="toggleContent(this)"><i class="fas fa-cogs"></i> Automated Email Resolutions for Known Issues</h3>
+            <div class="use-case-content">
+                <p><strong>Description:</strong></p><p>Upon ticket creation, AI cross-checks the issue against a catalog of known problems. If a match is found, RPA sends a pre-approved solution to the user via email. The process waits for user confirmation before closing the ticket.</p>
+                <p><strong>AI Solution:</strong></p><p>The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers. </p>
+                <p><strong>Benefits:</strong></p><p>Speeds up resolution of frequent issues like cache clearing or password resets and eliminates the need for manual follow-up. </p>
+                <p><strong>Preferred Tools:</strong> RPA + Power Automate</p>
+                <p><strong>Owner:</strong> Abishek Fernando</p>
+            </div>
+        </div>
+        </div><div class="topic"><h2><i class="fas fa-lightbulb"></i> AI-Driven Ticket Management</h2>
+        <div class="use-case" data-keywords="Auto-Categorization, Routing, Ticket Creation Bot Focuses on Ticket Automation & Workflow by using AI to automate ticket creation, categorization, and intelligent routing. Improves accuracy, reduces manual work, and accelerates resolution times. The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers.  Reduced manual effort
+
+Faster ticket assignment
+
+Improved accuracy
+
+Better SLA compliance
+
+Scalable support system
+
+Enhanced user experience Microsoft Power Automate (workflow automation)
+
+Microsoft Power Virtual Agents (chatbot for ticket creation)
+
+Microsoft Teams (user interface for support)
+
+Microsoft Azure Cognitive Services (language understanding and classification)
+
+OpenAI GPT via Azure OpenAI (for intelligent language-based automation) Dinesh Rajantha">
+            <h3 onclick="toggleContent(this)"><i class="fas fa-cogs"></i> Auto-Categorization, Routing, Ticket Creation Bot</h3>
+            <div class="use-case-content">
+                <p><strong>Description:</strong></p><p>Focuses on Ticket Automation & Workflow by using AI to automate ticket creation, categorization, and intelligent routing. Improves accuracy, reduces manual work, and accelerates resolution times.</p>
+                <p><strong>AI Solution:</strong></p><p>The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers. </p>
+                <p><strong>Benefits:</strong></p><p>Reduced manual effort
+
+Faster ticket assignment
+
+Improved accuracy
+
+Better SLA compliance
+
+Scalable support system
+
+Enhanced user experience</p>
+                <p><strong>Preferred Tools:</strong> Microsoft Power Automate (workflow automation)
+
+Microsoft Power Virtual Agents (chatbot for ticket creation)
+
+Microsoft Teams (user interface for support)
+
+Microsoft Azure Cognitive Services (language understanding and classification)
+
+OpenAI GPT via Azure OpenAI (for intelligent language-based automation)</p>
+                <p><strong>Owner:</strong> Dinesh Rajantha</p>
+            </div>
+        </div>
+        </div><div class="topic"><h2><i class="fas fa-lightbulb"></i> AI-Powered Security Support</h2>
+        <div class="use-case" data-keywords="Password Reset & Spam Detection Focuses on Security & Identity Automation using AI chatbots to manage password resets and spam email identification. Reduces IT workload, enhances response times, and improves security posture. The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers.  Reduced IT support workload
+
+Faster response times
+
+Enhanced security
+
+Improved user experience
+
+Consistent, scalable operations
+
+24/7 availability Microsoft Power Virtual Agents (password reset chatbot)
+
+Microsoft Azure Active Directory (identity and access management)
+
+Microsoft Defender for Office 365 (spam & threat detection)
+
+Microsoft Graph API (secure M365 integration)
+
+OpenAI GPT via Azure OpenAI (for natural language processing and user interaction) Dinesh Rajantha">
+            <h3 onclick="toggleContent(this)"><i class="fas fa-cogs"></i> Password Reset & Spam Detection</h3>
+            <div class="use-case-content">
+                <p><strong>Description:</strong></p><p>Focuses on Security & Identity Automation using AI chatbots to manage password resets and spam email identification. Reduces IT workload, enhances response times, and improves security posture.</p>
+                <p><strong>AI Solution:</strong></p><p>The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers. </p>
+                <p><strong>Benefits:</strong></p><p>Reduced IT support workload
+
+Faster response times
+
+Enhanced security
+
+Improved user experience
+
+Consistent, scalable operations
+
+24/7 availability</p>
+                <p><strong>Preferred Tools:</strong> Microsoft Power Virtual Agents (password reset chatbot)
+
+Microsoft Azure Active Directory (identity and access management)
+
+Microsoft Defender for Office 365 (spam & threat detection)
+
+Microsoft Graph API (secure M365 integration)
+
+OpenAI GPT via Azure OpenAI (for natural language processing and user interaction)</p>
+                <p><strong>Owner:</strong> Dinesh Rajantha</p>
+            </div>
+        </div>
+        
+        <div class="use-case" data-keywords="Password Reset & Spam Detection This initiative focuses on Security & Identity Automation by leveraging AI-powered chatbots to handle routine security tasks such as password resets and spam email identification. Aimed at enhancing general IT support and strengthening security measures, the solution reduces manual workload, accelerates response times, and ensures consistent handling of common security issues.  The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers.  1. Reduced IT Support Workload: 
+
+   Automating routine tasks like password resets minimizes the volume of repetitive support tickets, allowing IT teams to focus on higher-value activities.</p><p>2. Faster Response Times: 
+
+   Chatbots provide immediate assistance, significantly decreasing the time required to resolve common security issues for end-users.</p><p>3. Enhanced Security: 
+
+   Automated spam detection and secure identity management help mitigate potential threats quickly and accurately, reducing the risk of human error.</p><p>4. Improved User Experience: 
+
+   Employees receive quicker resolutions to security-related problems, leading to greater satisfaction and reduced downtime.</p><p>5. Consistent and Scalable Operations: 
+
+   Automation ensures uniform handling of tasks across the organization and scales easily with increased user demand or complexity.</p><p>6. 24/7 Availability: 
+
+   AI-powered chatbots can operate continuously without breaks, ensuring support is available around the clock.  Chat GPT 
+
+Microsoft Power Virtual Agents (Integrates with Microsoft 365 and Azure AD, perfect for IT and security tasks.)  
+
+Microsoft Defender for Office 365 
+
+Proofpoint or Mimecast  Shehan Nanayakkara">
+            <h3 onclick="toggleContent(this)"><i class="fas fa-cogs"></i> Password Reset & Spam Detection</h3>
+            <div class="use-case-content">
+                <p><strong>Description:</strong></p><p>This initiative focuses on Security & Identity Automation by leveraging AI-powered chatbots to handle routine security tasks such as password resets and spam email identification. Aimed at enhancing general IT support and strengthening security measures, the solution reduces manual workload, accelerates response times, and ensures consistent handling of common security issues. </p>
+                <p><strong>AI Solution:</strong></p><p>The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers. </p>
+                <p><strong>Benefits:</strong></p><p>1. Reduced IT Support Workload: 
+
+   Automating routine tasks like password resets minimizes the volume of repetitive support tickets, allowing IT teams to focus on higher-value activities.</p><p>2. Faster Response Times: 
+
+   Chatbots provide immediate assistance, significantly decreasing the time required to resolve common security issues for end-users.</p><p>3. Enhanced Security: 
+
+   Automated spam detection and secure identity management help mitigate potential threats quickly and accurately, reducing the risk of human error.</p><p>4. Improved User Experience: 
+
+   Employees receive quicker resolutions to security-related problems, leading to greater satisfaction and reduced downtime.</p><p>5. Consistent and Scalable Operations: 
+
+   Automation ensures uniform handling of tasks across the organization and scales easily with increased user demand or complexity.</p><p>6. 24/7 Availability: 
+
+   AI-powered chatbots can operate continuously without breaks, ensuring support is available around the clock. </p>
+                <p><strong>Preferred Tools:</strong> Chat GPT 
+
+Microsoft Power Virtual Agents (Integrates with Microsoft 365 and Azure AD, perfect for IT and security tasks.)  
+
+Microsoft Defender for Office 365 
+
+Proofpoint or Mimecast </p>
+                <p><strong>Owner:</strong> Shehan Nanayakkara</p>
+            </div>
+        </div>
+        </div><div class="topic"><h2><i class="fas fa-lightbulb"></i> AI-Powered Sentiment & Feedback Analysis for Enhanced Support Quality</h2>
+        <div class="use-case" data-keywords="AI-Powered Sentiment & Feedback Analysis for Enhanced Support Quality This initiative leverages AI-driven sentiment and feedback analysis to enhance the quality of IT support and overall customer experience. By analyzing user interactions and feedback, the solution identifies key sentiment trends, highlights areas for improvement, and enables data-driven quality scoring. The project aims to support continuous service optimization through actionable insights, ensuring more empathetic, effective, and responsive support delivery. The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers.  1.Improved user Experience 
+
+   AI-powered analysis helps identify user pain points and satisfaction drivers, enabling tailored responses and a more empathetic support experience.</p><p>2.Enhanced Support Quality 
+
+   Continuous monitoring and scoring of support interactions ensure consistent service quality, highlighting both strengths and areas needing improvement.</p><p>3. Data-Driven Decision Making 
+
+   Real-time sentiment insights empower support teams to prioritize actions based on user emotion trends and feedback data.</p><p>4. Proactive Issue Resolution 
+
+   Early detection of negative sentiment or recurring issues allows teams to address concerns before they escalate, reducing churn and increasing satisfaction.</p><p>5. Performance Benchmarking 
+
+   Quality scoring metrics provide a clear framework for evaluating individual and team performance, supporting coaching and development initiatives.</p><p>6. Operational Efficiency 
+
+   Automating feedback analysis reduces manual effort, speeds up insight generation, and enables faster strategic responses.  Power BI / Tableau – For building dashboards and visualizing sentiment trends and support performance. 
+
+Microsoft Azure Text Analytics – Offers sentiment analysis as part of Azure Cognitive Services. 
+
+  Shehan Nanayakkara">
+            <h3 onclick="toggleContent(this)"><i class="fas fa-cogs"></i> AI-Powered Sentiment & Feedback Analysis for Enhanced Support Quality</h3>
+            <div class="use-case-content">
+                <p><strong>Description:</strong></p><p>This initiative leverages AI-driven sentiment and feedback analysis to enhance the quality of IT support and overall customer experience. By analyzing user interactions and feedback, the solution identifies key sentiment trends, highlights areas for improvement, and enables data-driven quality scoring. The project aims to support continuous service optimization through actionable insights, ensuring more empathetic, effective, and responsive support delivery.</p>
+                <p><strong>AI Solution:</strong></p><p>The AI observes patterns across incidents — if multiple similar ones occur over a few days/weeks/months, it clusters them and auto-creates mail to problem management team. It will also suggest potential root causes and suggest the right resolver team to Problem Managers. </p>
+                <p><strong>Benefits:</strong></p><p>1.Improved user Experience 
+
+   AI-powered analysis helps identify user pain points and satisfaction drivers, enabling tailored responses and a more empathetic support experience.</p><p>2.Enhanced Support Quality 
+
+   Continuous monitoring and scoring of support interactions ensure consistent service quality, highlighting both strengths and areas needing improvement.</p><p>3. Data-Driven Decision Making 
+
+   Real-time sentiment insights empower support teams to prioritize actions based on user emotion trends and feedback data.</p><p>4. Proactive Issue Resolution 
+
+   Early detection of negative sentiment or recurring issues allows teams to address concerns before they escalate, reducing churn and increasing satisfaction.</p><p>5. Performance Benchmarking 
+
+   Quality scoring metrics provide a clear framework for evaluating individual and team performance, supporting coaching and development initiatives.</p><p>6. Operational Efficiency 
+
+   Automating feedback analysis reduces manual effort, speeds up insight generation, and enables faster strategic responses. </p>
+                <p><strong>Preferred Tools:</strong> Power BI / Tableau – For building dashboards and visualizing sentiment trends and support performance. 
+
+Microsoft Azure Text Analytics – Offers sentiment analysis as part of Azure Cognitive Services. 
+
+ </p>
+                <p><strong>Owner:</strong> Shehan Nanayakkara</p>
+            </div>
+        </div>
+        </div>
+</div>
+<script>
+    function toggleContent(header) {
+        const content = header.nextElementSibling;
+        content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+    }
+
+    window.onscroll = function() {
+        let scrolled = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+        document.getElementById("scrollBar").style.width = scrolled + "%";
+    };
+
+    document.getElementById("searchInput").addEventListener("keyup", function () {
+        let filter = this.value.toLowerCase();
+        document.querySelectorAll(".use-case").forEach(function (box) {
+            let keywords = box.getAttribute("data-keywords").toLowerCase();
+            box.style.display = keywords.includes(filter) ? "" : "none";
+        });
+    });
+</script>
+</body>
+</html>
